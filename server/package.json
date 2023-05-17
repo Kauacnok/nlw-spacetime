@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
@@ -19,7 +19,9 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@fastify/cors": "^8.2.1",
     "@prisma/client": "^4.14.0",
-    "fastify": "^4.17.0"
+    "fastify": "^4.17.0",
+    "zod": "^3.21.4"
   }
 }
