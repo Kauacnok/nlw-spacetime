@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
 					<div className="text-sm leading-relaxed text-gray-200">Feito com carinho no NLW da Rocketseat</div>
 				</div>
-				<div className="flex flex-col p-16 bg-[url(../assets/bg-stars.svg)] bg-cover">
+				<div className="flex overflow-y-scroll max-h-screen flex-col bg-[url(../assets/bg-stars.svg)] bg-cover">
 					{children}
 				</div>
 			</main>	
