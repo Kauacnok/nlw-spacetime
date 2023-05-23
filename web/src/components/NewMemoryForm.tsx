@@ -45,7 +45,7 @@ export function NewMemoryForm() {
 	}
 
 	return (
-		<form className="flex flex-col flex-1 gap-2" onSubmit={handleCreateMemory}>
+		<form className="flex flex-col flex-1 gap-5 md:gap-2" onSubmit={handleCreateMemory}>
 			<div className="flex items-center gap-4">
 				<label htmlFor="media" className="flex items-center gap-1.5 cursor-pointer text-sm text-gray-200 hover:text-gray-100">
 					<Camera className="w-4 h-4" />

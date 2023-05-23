@@ -21,8 +21,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 	    <html lang="pt-br">
 	      <body className={`${roboto.variable} ${BaiJamjuree.variable} font-sans bg-gray-900 text-gray-100`}>
-	      	<main className="grid grid-cols-2 min-h-screen">
-				<div className="flex flex-col items-start justify-between px-28 py-16 relative overflow-hidden border-r border-white/10 bg-[url(../assets/bg-stars.svg)] bg-cover">
+	      	<main className="grid grid-cols-1 h-1/2 md:grid-cols-2 md:min-h-screen">
+				<div className="flex flex-col gap-10 items-start justify-between px-8 py-8 relative overflow-hidden border-b border-white/10 bg-[url(../assets/bg-stars.svg)] bg-cover lg:px-28 lg:py-16 lg:gap-0 md:border-r md:border-white/10">
 					<div className="absolute right-0 top-1/2 h-[288px] w-[526px] bg-purple-700 opacity-50 -translate-y-1/2 translate-x-1/2 rounded-full blur-full" />
 					<div className="absolute right-2 top-0 bottom-0 w-2 bg-stripes" />
 
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
 					<div className="text-sm leading-relaxed text-gray-200">Feito com carinho no NLW da Rocketseat</div>
 				</div>
-				<div className="flex overflow-y-scroll max-h-screen flex-col bg-[url(../assets/bg-stars.svg)] bg-cover">
+				<div className="flex max-h-screen flex-col bg-[url(../assets/bg-stars.svg)] bg-cover md:overflow-y-scroll">
 					{children}
 				</div>
 			</main>	

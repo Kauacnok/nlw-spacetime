@@ -20,7 +20,7 @@ export default async function Home() {
 	const isAuthenticated = cookies().has('token')
 
 	if (!isAuthenticated) {
-		<EmptyMemories />
+		return <EmptyMemories />
 	}
 
 	const token = cookies().get('token')?.value
