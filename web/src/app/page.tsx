@@ -20,7 +20,7 @@ export default async function Home() {
 	const isAuthenticated = cookies().has('token')
 
 	if (!isAuthenticated) {
-		return <EmptyMemories />
+		return <EmptyMemories message="Você ainda não registrou nenhuma lembrança, comece a " path="/memories/new" messageForPath="criar agora!" />
 	}
 
 	const token = cookies().get('token')?.value
@@ -34,7 +34,7 @@ export default async function Home() {
 	const memories: Memory[] = response.data
 
 	if (memories.length === 0) {
-		return <EmptyMemories />
+		return <EmptyMemories message="Você ainda não registrou nenhuma lembrança, comece a " path="/memories/new" messageForPath="criar agora!" />
 	}
 
 	return (	
@@ -47,7 +47,7 @@ export default async function Home() {
 						</time>
 						<img src={memory.coverUrl} alt="" className="w-full aspect-video object-cover rounded-lg" />
 						<p className="text-lg leading-relaxed text-gray-100">{memory.excerpt}</p>
-						<Link href={`/memories/${memory.id}`} className="flex items-center gap-2 text-sm text-gray-200 hover:text-gray-100">
+						<Link href={`/memories/private/${memory.id}`} className="flex items-center gap-2 text-sm text-gray-200 hover:text-gray-100">
 							Ler mais
 							<ArrowRight className="w-4 h-4" />
 						</Link>

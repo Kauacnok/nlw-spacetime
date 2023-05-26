@@ -17,5 +17,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher: '/memories/:path*'
+	matcher: ['/memories/new/:path*', '/memories/private/:path*']
 }

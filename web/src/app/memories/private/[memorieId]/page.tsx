@@ -3,8 +3,8 @@ import { cookies } from 'next/headers'
 import dayjs from 'dayjs'
 import ptBr from 'dayjs/locale/pt-br'
 
-import { api } from '../../../lib/api'
-import { CopyToClipBoard } from '../../../components/CopyToClipBoard'
+import { api } from '../../../../lib/api'
+import { CopyToClipBoard } from '../../../../components/CopyToClipBoard'
 
 dayjs.locale(ptBr)
 
@@ -45,7 +45,7 @@ export default async function MemorieId({ params }: memorieIDProps) {
 				<p className="text-lg leading-relaxed text-gray-100">{memory.content}</p>
 				<div className="flex flex-col items-center gap-2 md:flex-row">
 					<Link href={`/memories/update/${params.memorieId}`} className="inline-block rounded-full self-end bg-green-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-green-600 transition-colors md:self-start">Editar memória</Link>
-					<CopyToClipBoard memorieId={params.memorieId} />
+					{ memory.isPublic && <CopyToClipBoard memorieId={params.memorieId} />}
 				</div>
 			</div>
 		</div>
