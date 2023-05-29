@@ -23,6 +23,15 @@ interface Memory {
 	isPublic: boolean
 }
 
+interface User {
+	id: string,
+	githubId: string,
+	name: string,
+	login: string,
+	avatarUrl: string,
+	memories: Memory[]
+}
+
 export default async function MemorieId({ params }: memorieIDProps) {
 	const response = await api.get(`/memories/public/${params.memorieId}`)
 
@@ -36,6 +45,10 @@ export default async function MemorieId({ params }: memorieIDProps) {
 		return <EmptyMemories message="O autor desta memória não deixou está memória como pública, " path="/" messageForPath="voltar para a página inicial" />
 	}
 
+	const responseUser = await api.get(`/user/${memory.userId}`)
+
+	const user: User = responseUser.data
+
 	return (
 		<div className="flex flex-col gap-10 p-8 ">
 			<div className="space-y-4">
@@ -44,6 +57,13 @@ export default async function MemorieId({ params }: memorieIDProps) {
 				</time>
 				<Link href="/" className="flex items-center gap-2 text-sm underline text-gray-200 hover:text-gray-100">Voltar para a página inicial</Link>
 				<img src={memory.coverUrl} alt="" className="w-full aspect-video object-cover rounded-lg" />
+				<div className="flex items-center gap-3 text-left">
+					<img src={user.avatarUrl} className="w-10 h-10 rounded-full" />
+					<div>
+						<h1 className="text-sm leading-snug text-gray-50">{user.name} <a href={`https://github.com/${user.login}`} target="_blank" className="text-gray-100 underline">(@<span className="capitalize">{user.login}</span>)</a></h1>
+						<p className="text-sm leading-snug">Autor da memória</p>
+					</div>
+				</div>
 				<p className="text-lg leading-relaxed text-gray-100">{memory.content}</p>
 			</div>
 		</div>

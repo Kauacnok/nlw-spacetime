@@ -11,6 +11,7 @@ import { memoriesRoutes } from './routes/memories'
 import { authRoutes } from './routes/auth'
 import { uploadRoutes } from './routes/upload'
 import { memoriesPublicRoutes } from './routes/memories-public'
+import { usersRoutes } from './routes/users'
 
 const app = fastify()
 
@@ -32,6 +33,7 @@ app.register(memoriesRoutes)
 app.register(authRoutes)
 app.register(uploadRoutes)
 app.register(memoriesPublicRoutes)
+app.register(usersRoutes)
 
 app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
     console.log('HTTP server running on http://localhost:3333')
