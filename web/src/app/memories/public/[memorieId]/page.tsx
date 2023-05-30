@@ -36,13 +36,13 @@ export default async function MemorieId({ params }: memorieIDProps) {
 	const response = await api.get(`/memories/public/${params.memorieId}`)
 
 	if (!response) {
-		return <EmptyMemories message="O autor desta memória não deixou está memória como pública, " path="/" messageForPath="voltar para a página inicial" />
+		return <EmptyMemories message="O autor desta memória não deixou está memória como pública, " path="/" messageForPath="voltar para a página inicial" isHomePage={false} />
 	}
 
 	const memory: Memory = response.data
 
 	if (memory.isPublic === false) {
-		return <EmptyMemories message="O autor desta memória não deixou está memória como pública, " path="/" messageForPath="voltar para a página inicial" />
+		return <EmptyMemories message="O autor desta memória não deixou está memória como pública, " path="/" messageForPath="voltar para a página inicial" isHomePage={false} />
 	}
 
 	const responseUser = await api.get(`/user/${memory.userId}`)
