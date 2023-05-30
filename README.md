@@ -1,6 +1,6 @@
 <p align='center'> 
 	<h1 align='center'>NLW Spacetime</h1>
-	<img src="https://i.imgur.com/AlaXUk0.png" alt="Imagem do layout do site de memórias na versão para computador" />
+	<img src="https://i.imgur.com/vFgG9SF.png" alt="Imagem do layout do site de memórias na versão para computador" />
 </p>
 
 ## 🧪 Tecnologias
